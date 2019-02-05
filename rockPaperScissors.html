@@ -1,119 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Rock, Paper, Scissors</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rock, Paper, Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
     <style>
-        #instruction {
-            display:inline;
-            margin: 10px;
-        }
+      #instruction {
+        display: inline;
+        margin: 10px;
+      }
 
-        button {
-            margin: 10px;
-            padding:20px;
-        }
+      button {
+        margin: 10px;
+        padding: 20px;
+      }
     </style>
-  
 
-<p id="instruction"> Make your choice: </p>
-<input id="textInput" type='text'> 
-<div>
-<button onclick="buttonClicked()"> Click to play! </button>
-<p id="result"></p>
-</div>  
+    <p id="instruction">Make your choice:</p>
+    <input id="textInput" type="text" />
+    <div>
+      <button onclick="buttonClicked()">Click to play!</button>
+      <p id="result"></p>
+      <p id="tally"></p>
+    </div>
 
-<script>
-        
-        var computer = "";
-        var human;
-        var result;
-
-
-    //     function playGame(computer, player) {
-    //         // debugger;
-    //     if ( computer === 'rock' ) {
-    //         if (player === 'scissors') {
-    //             console.log('Computer wins')
-    //         } else if (player === 'paper') {
-    //             console.log('Player wins')
-    //         } else {
-    //             console.log('The game is a draw')
-    //         } 
-    //     } else if (computer === 'scissors') {
-    //         if (player === 'rock') {
-    //             console.log('Player wins')
-    //         } else if (player === 'paper') {
-    //             console.log('Computer wins')
-    //         } else {
-    //             console.log('The game is a draw')
-    //         } 
-    //     } else if (computer === 'paper') {
-    //         if (player === 'rock') {
-    //             console.log('Computer wins')
-    //         } else if (player === 'scissors') {
-    //             console.log('Player wins')
-    //         } else {
-    //             console.log('The game is a draw')
-    //         } 
-    //     }       
-    // } 
-
-
-    function randomGenerator() {
-        var newNumber = Math.floor((Math.random() * 3) + 1);
-        if (newNumber === 1) {
-            computer = "rock"
-        } else if (newNumber === 2) {
-            computer = "scissors"
-        } else {
-            computer = "paper"
-        }
-        return computer;
-    }
-
-    var text = document.querySelector('#textInput').value;
-
-    function buttonClicked () {
-        var textValue = document.querySelector('#textInput');
-        var lowerCase = textValue.value.toLowerCase();
-        randomGenerator();
-        playGameTwo(lowerCase);
-        document.getElementById('result').innerHTML = "Player was " + human + "<br>" + " Computer was " + computer + "<br>" + "Result: " + result;
-        textValue.value = "";
-
-    }
-
-    function playGameTwo (player) {
-        human = player;
-        if ( computer === player) {
-            result = "It's a draw!";
-        } else if ( computer === 'rock' && player === 'scissors' ) {
-            result = "Computer wins!";
-        } else if ( computer === 'rock' && player === 'paper' ) {
-            result = "Player wins!";
-        } else if ( computer === 'scissors' && player === 'paper' ) {
-            result = "Computer wins!";
-        } else if ( computer === 'scissors' && player === 'rock' ) {
-            result = "Player wins!";
-        } else if ( computer === 'paper' && player === 'rock' ) {
-            result = "Computer wins!";
-        } else if ( computer === 'paper' && player === 'scissors' ) {
-            result = "Player wins!";
-        } else {
-            result = "Not a valid entry";
-        }
-        return human;
-    }
-     
-    
-    
-    </script>
-</body>
+    <script src="./index.js"></script>
+  </body>
 </html>
